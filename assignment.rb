@@ -1,30 +1,38 @@
+#string interpolation
 
-
-
-
-
-
-
-
+	x = "You're"
+	puts "#{x} only in America!"
 
 #finding the max number
+
 x = [100,10,-1000]
-x.max
+ puts x.max
+
 
 
 # converting array to hashs
-keys = [:toyota,:tesla]
-values = ["prius","model S"]
-
-hash = {}
-keys.each_with_index { |key, index| hash[key] = values[index] }
+  [:toyota,:tesla]
+  ["prius","model S"]
+  
+hash = [[:toyota, 'prius'], [:tesla, 'model S']].inject({}) do |result, element|
+  result[element.first] = element.last
+  result
+end
+ 
+puts hash
 
 
 #looping
-def integer(number)
-  n = 1
-  while n < 100
-    puts number
-    n = n + 1
-  end
-end
+(1..100).each{|i|
+      x = ''
+      x += 'Fizz' if i%3==0
+      x += 'Buzz' if i%5==0
+      puts(x.empty? ? i : x);
+    }
+
+
+
+
+
+
+
